@@ -1,0 +1,50 @@
+[2024-07-10 13:44:15,609] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-10T13:44:14.799850+00:00 [queued]>
+[2024-07-10 13:44:15,619] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-10T13:44:14.799850+00:00 [queued]>
+[2024-07-10 13:44:15,619] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 13:44:15,619] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-10 13:44:15,620] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 13:44:15,634] {taskinstance.py:1377} INFO - Executing <Task(DockerOperator): create_seeds> on 2024-07-10 13:44:14.799850+00:00
+[2024-07-10 13:44:15,638] {standard_task_runner.py:52} INFO - Started process 201 to run task
+[2024-07-10 13:44:15,641] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'create_layers_in_snowflake', 'create_seeds', 'manual__2024-07-10T13:44:14.799850+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/create_layers.py', '--cfg-path', '/tmp/tmpufe62tjg', '--error-file', '/tmp/tmpwo6ybwlq']
+[2024-07-10 13:44:15,642] {standard_task_runner.py:80} INFO - Job 3: Subtask create_seeds
+[2024-07-10 13:44:15,696] {task_command.py:369} INFO - Running <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-10T13:44:14.799850+00:00 [running]> on host bc9f9d1e47b7
+[2024-07-10 13:44:15,768] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=create_layers_in_snowflake
+AIRFLOW_CTX_TASK_ID=create_seeds
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-10T13:44:14.799850+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-10T13:44:14.799850+00:00
+[2024-07-10 13:44:15,789] {docker.py:247} INFO - Starting docker container from image custom_dbt_image
+[2024-07-10 13:44:15,905] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.45/containers/c841a5632b826e92823a7900d1db8613d1ced46e6952e92a77ed1cd80501d857/start
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 387, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 266, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 302, in _run_image_with_mounts
+    self.cli.start(self.container['Id'])
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/container.py", line 1109, in start
+    self._raise_for_status(res)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+  File "/home/airflow/.local/lib/python3.7/site-packages/docker/errors.py", line 31, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.45/containers/c841a5632b826e92823a7900d1db8613d1ced46e6952e92a77ed1cd80501d857/start: Bad Request ("failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "cd": executable file not found in $PATH: unknown")
+[2024-07-10 13:44:15,915] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=create_layers_in_snowflake, task_id=create_seeds, execution_date=20240710T134414, start_date=20240710T134415, end_date=20240710T134415
+[2024-07-10 13:44:15,927] {standard_task_runner.py:97} ERROR - Failed to execute job 3 for task create_seeds (400 Client Error for http+docker://localhost/v1.45/containers/c841a5632b826e92823a7900d1db8613d1ced46e6952e92a77ed1cd80501d857/start: Bad Request ("failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "cd": executable file not found in $PATH: unknown"); 201)
+[2024-07-10 13:44:15,945] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-07-10 13:44:16,036] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

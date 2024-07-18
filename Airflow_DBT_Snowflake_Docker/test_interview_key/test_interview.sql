@@ -1,0 +1,1 @@
+select * from  {{ source('test_interview','FULL_MOON_DATES') }} 

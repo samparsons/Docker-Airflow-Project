@@ -1,0 +1,103 @@
+[2024-07-10 16:29:19,686] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: test_questions.bash1 manual__2024-07-10T16:29:18.810783+00:00 [queued]>
+[2024-07-10 16:29:19,697] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: test_questions.bash1 manual__2024-07-10T16:29:18.810783+00:00 [queued]>
+[2024-07-10 16:29:19,697] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 16:29:19,698] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-10 16:29:19,698] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 16:29:19,711] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): bash1> on 2024-07-10 16:29:18.810783+00:00
+[2024-07-10 16:29:19,716] {standard_task_runner.py:52} INFO - Started process 3746 to run task
+[2024-07-10 16:29:19,719] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'test_questions', 'bash1', 'manual__2024-07-10T16:29:18.810783+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/test_questions.py', '--cfg-path', '/tmp/tmprk7xew5z', '--error-file', '/tmp/tmpt1mfskrm']
+[2024-07-10 16:29:19,720] {standard_task_runner.py:80} INFO - Job 4: Subtask bash1
+[2024-07-10 16:29:19,780] {task_command.py:369} INFO - Running <TaskInstance: test_questions.bash1 manual__2024-07-10T16:29:18.810783+00:00 [running]> on host c8efd281e0f4
+[2024-07-10 16:29:19,856] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_questions
+AIRFLOW_CTX_TASK_ID=bash1
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-10T16:29:18.810783+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-10T16:29:18.810783+00:00
+[2024-07-10 16:29:19,857] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2024-07-10 16:29:19,858] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd .. && ls && cd .. && ls && cd .. && ls && cd .. && ls ']
+[2024-07-10 16:29:19,867] {subprocess.py:85} INFO - Output:
+[2024-07-10 16:29:19,871] {subprocess.py:92} INFO - ***tmpe2mb5q3r
+[2024-07-10 16:29:19,872] {subprocess.py:92} INFO - pymp-a4xpanfq
+[2024-07-10 16:29:19,872] {subprocess.py:92} INFO - tmp8vnu40h4
+[2024-07-10 16:29:19,873] {subprocess.py:92} INFO - tmpt1mfskrm
+[2024-07-10 16:29:19,874] {subprocess.py:92} INFO - ***-scheduler-autorestart
+[2024-07-10 16:29:19,874] {subprocess.py:92} INFO - bin
+[2024-07-10 16:29:19,875] {subprocess.py:92} INFO - boot
+[2024-07-10 16:29:19,876] {subprocess.py:92} INFO - clean-logs
+[2024-07-10 16:29:19,876] {subprocess.py:92} INFO - dbtlearn
+[2024-07-10 16:29:19,877] {subprocess.py:92} INFO - dev
+[2024-07-10 16:29:19,877] {subprocess.py:92} INFO - entrypoint
+[2024-07-10 16:29:19,877] {subprocess.py:92} INFO - etc
+[2024-07-10 16:29:19,878] {subprocess.py:92} INFO - home
+[2024-07-10 16:29:19,878] {subprocess.py:92} INFO - lib
+[2024-07-10 16:29:19,878] {subprocess.py:92} INFO - lib64
+[2024-07-10 16:29:19,879] {subprocess.py:92} INFO - media
+[2024-07-10 16:29:19,879] {subprocess.py:92} INFO - mnt
+[2024-07-10 16:29:19,880] {subprocess.py:92} INFO - opt
+[2024-07-10 16:29:19,880] {subprocess.py:92} INFO - proc
+[2024-07-10 16:29:19,880] {subprocess.py:92} INFO - root
+[2024-07-10 16:29:19,881] {subprocess.py:92} INFO - run
+[2024-07-10 16:29:19,881] {subprocess.py:92} INFO - sbin
+[2024-07-10 16:29:19,881] {subprocess.py:92} INFO - scripts
+[2024-07-10 16:29:19,882] {subprocess.py:92} INFO - srv
+[2024-07-10 16:29:19,882] {subprocess.py:92} INFO - sys
+[2024-07-10 16:29:19,882] {subprocess.py:92} INFO - tmp
+[2024-07-10 16:29:19,883] {subprocess.py:92} INFO - usr
+[2024-07-10 16:29:19,883] {subprocess.py:92} INFO - var
+[2024-07-10 16:29:19,883] {subprocess.py:92} INFO - ***-scheduler-autorestart
+[2024-07-10 16:29:19,884] {subprocess.py:92} INFO - bin
+[2024-07-10 16:29:19,884] {subprocess.py:92} INFO - boot
+[2024-07-10 16:29:19,884] {subprocess.py:92} INFO - clean-logs
+[2024-07-10 16:29:19,885] {subprocess.py:92} INFO - dbtlearn
+[2024-07-10 16:29:19,885] {subprocess.py:92} INFO - dev
+[2024-07-10 16:29:19,886] {subprocess.py:92} INFO - entrypoint
+[2024-07-10 16:29:19,886] {subprocess.py:92} INFO - etc
+[2024-07-10 16:29:19,886] {subprocess.py:92} INFO - home
+[2024-07-10 16:29:19,887] {subprocess.py:92} INFO - lib
+[2024-07-10 16:29:19,887] {subprocess.py:92} INFO - lib64
+[2024-07-10 16:29:19,887] {subprocess.py:92} INFO - media
+[2024-07-10 16:29:19,888] {subprocess.py:92} INFO - mnt
+[2024-07-10 16:29:19,888] {subprocess.py:92} INFO - opt
+[2024-07-10 16:29:19,888] {subprocess.py:92} INFO - proc
+[2024-07-10 16:29:19,889] {subprocess.py:92} INFO - root
+[2024-07-10 16:29:19,889] {subprocess.py:92} INFO - run
+[2024-07-10 16:29:19,889] {subprocess.py:92} INFO - sbin
+[2024-07-10 16:29:19,890] {subprocess.py:92} INFO - scripts
+[2024-07-10 16:29:19,890] {subprocess.py:92} INFO - srv
+[2024-07-10 16:29:19,890] {subprocess.py:92} INFO - sys
+[2024-07-10 16:29:19,891] {subprocess.py:92} INFO - tmp
+[2024-07-10 16:29:19,891] {subprocess.py:92} INFO - usr
+[2024-07-10 16:29:19,891] {subprocess.py:92} INFO - var
+[2024-07-10 16:29:19,892] {subprocess.py:92} INFO - ***-scheduler-autorestart
+[2024-07-10 16:29:19,892] {subprocess.py:92} INFO - bin
+[2024-07-10 16:29:19,892] {subprocess.py:92} INFO - boot
+[2024-07-10 16:29:19,893] {subprocess.py:92} INFO - clean-logs
+[2024-07-10 16:29:19,893] {subprocess.py:92} INFO - dbtlearn
+[2024-07-10 16:29:19,893] {subprocess.py:92} INFO - dev
+[2024-07-10 16:29:19,894] {subprocess.py:92} INFO - entrypoint
+[2024-07-10 16:29:19,894] {subprocess.py:92} INFO - etc
+[2024-07-10 16:29:19,894] {subprocess.py:92} INFO - home
+[2024-07-10 16:29:19,895] {subprocess.py:92} INFO - lib
+[2024-07-10 16:29:19,895] {subprocess.py:92} INFO - lib64
+[2024-07-10 16:29:19,895] {subprocess.py:92} INFO - media
+[2024-07-10 16:29:19,896] {subprocess.py:92} INFO - mnt
+[2024-07-10 16:29:19,896] {subprocess.py:92} INFO - opt
+[2024-07-10 16:29:19,897] {subprocess.py:92} INFO - proc
+[2024-07-10 16:29:19,898] {subprocess.py:92} INFO - root
+[2024-07-10 16:29:19,898] {subprocess.py:92} INFO - run
+[2024-07-10 16:29:19,899] {subprocess.py:92} INFO - sbin
+[2024-07-10 16:29:19,899] {subprocess.py:92} INFO - scripts
+[2024-07-10 16:29:19,900] {subprocess.py:92} INFO - srv
+[2024-07-10 16:29:19,900] {subprocess.py:92} INFO - sys
+[2024-07-10 16:29:19,900] {subprocess.py:92} INFO - tmp
+[2024-07-10 16:29:19,901] {subprocess.py:92} INFO - usr
+[2024-07-10 16:29:19,901] {subprocess.py:92} INFO - var
+[2024-07-10 16:29:19,902] {subprocess.py:96} INFO - Command exited with return code 0
+[2024-07-10 16:29:19,937] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=test_questions, task_id=bash1, execution_date=20240710T162918, start_date=20240710T162919, end_date=20240710T162919
+[2024-07-10 16:29:19,984] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-07-10 16:29:20,032] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

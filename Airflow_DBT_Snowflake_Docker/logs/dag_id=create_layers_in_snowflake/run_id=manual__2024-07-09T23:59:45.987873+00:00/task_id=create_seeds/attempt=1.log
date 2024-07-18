@@ -1,0 +1,51 @@
+[2024-07-09 23:59:46,720] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-09T23:59:45.987873+00:00 [queued]>
+[2024-07-09 23:59:46,731] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-09T23:59:45.987873+00:00 [queued]>
+[2024-07-09 23:59:46,731] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-09 23:59:46,732] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-09 23:59:46,732] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-09 23:59:46,745] {taskinstance.py:1377} INFO - Executing <Task(DockerOperator): create_seeds> on 2024-07-09 23:59:45.987873+00:00
+[2024-07-09 23:59:46,749] {standard_task_runner.py:52} INFO - Started process 1824 to run task
+[2024-07-09 23:59:46,752] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'create_layers_in_snowflake', 'create_seeds', 'manual__2024-07-09T23:59:45.987873+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/create_layers.py', '--cfg-path', '/tmp/tmp7m3ww0_4', '--error-file', '/tmp/tmpls_7q5u7']
+[2024-07-09 23:59:46,753] {standard_task_runner.py:80} INFO - Job 24: Subtask create_seeds
+[2024-07-09 23:59:46,807] {task_command.py:369} INFO - Running <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-09T23:59:45.987873+00:00 [running]> on host a22086a40575
+[2024-07-09 23:59:46,884] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=create_layers_in_snowflake
+AIRFLOW_CTX_TASK_ID=create_seeds
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-09T23:59:45.987873+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-09T23:59:45.987873+00:00
+[2024-07-09 23:59:46,906] {docker.py:247} INFO - Starting docker container from image custom_dbt_image
+[2024-07-09 23:59:47,030] {docker.py:308} INFO - app
+bin
+games
+include
+lib
+local
+sbin
+share
+src
+[2024-07-09 23:59:47,031] {docker.py:308} INFO - bin
+boot
+dev
+etc
+home
+lib
+lib64
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+[2024-07-09 23:59:47,105] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=create_layers_in_snowflake, task_id=create_seeds, execution_date=20240709T235945, start_date=20240709T235946, end_date=20240709T235947
+[2024-07-09 23:59:47,138] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-07-09 23:59:47,170] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,10 @@
+version: 2
+
+#pull data from FULL_MOON_DATES table
+
+sources:
+  - name: test_interview
+    database: AIRBNB
+    schema: DEV
+    tables:
+      - name: FULL_MOON_DATES

@@ -1,0 +1,40 @@
+[2024-07-10 16:43:24,310] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: test_questions.bash1 manual__2024-07-10T16:43:23.270290+00:00 [queued]>
+[2024-07-10 16:43:24,324] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: test_questions.bash1 manual__2024-07-10T16:43:23.270290+00:00 [queued]>
+[2024-07-10 16:43:24,324] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 16:43:24,324] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-10 16:43:24,325] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 16:43:24,339] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): bash1> on 2024-07-10 16:43:23.270290+00:00
+[2024-07-10 16:43:24,342] {standard_task_runner.py:52} INFO - Started process 4616 to run task
+[2024-07-10 16:43:24,347] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'test_questions', 'bash1', 'manual__2024-07-10T16:43:23.270290+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/test_questions.py', '--cfg-path', '/tmp/tmpn09x4lve', '--error-file', '/tmp/tmplws5jqj7']
+[2024-07-10 16:43:24,347] {standard_task_runner.py:80} INFO - Job 10: Subtask bash1
+[2024-07-10 16:43:24,409] {task_command.py:369} INFO - Running <TaskInstance: test_questions.bash1 manual__2024-07-10T16:43:23.270290+00:00 [running]> on host c8efd281e0f4
+[2024-07-10 16:43:24,489] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_questions
+AIRFLOW_CTX_TASK_ID=bash1
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-10T16:43:23.270290+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-10T16:43:23.270290+00:00
+[2024-07-10 16:43:24,491] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2024-07-10 16:43:24,491] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd /dbtlearn && dbt run --select test_interview']
+[2024-07-10 16:43:24,500] {subprocess.py:85} INFO - Output:
+[2024-07-10 16:43:27,360] {subprocess.py:92} INFO - [0m16:43:27  Running with dbt=1.5.0
+[2024-07-10 16:43:28,385] {subprocess.py:92} INFO - [0m16:43:28  Found 10 models, 0 tests, 0 snapshots, 0 analyses, 321 macros, 0 operations, 1 seed file, 1 source, 0 exposures, 0 metrics, 0 groups
+[2024-07-10 16:43:28,389] {subprocess.py:92} INFO - [0m16:43:28
+[2024-07-10 16:43:30,438] {subprocess.py:92} INFO - [0m16:43:30  Concurrency: 1 threads (target='dev')
+[2024-07-10 16:43:30,440] {subprocess.py:92} INFO - [0m16:43:30
+[2024-07-10 16:43:30,454] {subprocess.py:92} INFO - [0m16:43:30  1 of 1 START sql view model DEV.test_interview ................................. [RUN]
+[2024-07-10 16:43:31,164] {subprocess.py:92} INFO - [0m16:43:31  1 of 1 OK created sql view model DEV.test_interview ............................ [[32mSUCCESS 1[0m in 0.71s]
+[2024-07-10 16:43:31,268] {subprocess.py:92} INFO - [0m16:43:31
+[2024-07-10 16:43:31,269] {subprocess.py:92} INFO - [0m16:43:31  Finished running 1 view model in 0 hours 0 minutes and 2.88 seconds (2.88s).
+[2024-07-10 16:43:31,282] {subprocess.py:92} INFO - [0m16:43:31
+[2024-07-10 16:43:31,283] {subprocess.py:92} INFO - [0m16:43:31  [32mCompleted successfully[0m
+[2024-07-10 16:43:31,284] {subprocess.py:92} INFO - [0m16:43:31
+[2024-07-10 16:43:31,285] {subprocess.py:92} INFO - [0m16:43:31  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2024-07-10 16:43:31,776] {subprocess.py:96} INFO - Command exited with return code 0
+[2024-07-10 16:43:31,813] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=test_questions, task_id=bash1, execution_date=20240710T164323, start_date=20240710T164324, end_date=20240710T164331
+[2024-07-10 16:43:31,859] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-07-10 16:43:31,892] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

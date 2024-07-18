@@ -1,0 +1,1 @@
+select * from  AIRBNB.DEV.FULL_MOON_DATES

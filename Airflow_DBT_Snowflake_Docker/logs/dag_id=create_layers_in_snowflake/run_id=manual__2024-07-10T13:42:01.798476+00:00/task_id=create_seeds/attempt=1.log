@@ -1,0 +1,43 @@
+[2024-07-10 13:42:02,718] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-10T13:42:01.798476+00:00 [queued]>
+[2024-07-10 13:42:02,728] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-10T13:42:01.798476+00:00 [queued]>
+[2024-07-10 13:42:02,728] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 13:42:02,729] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-10 13:42:02,729] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 13:42:02,742] {taskinstance.py:1377} INFO - Executing <Task(DockerOperator): create_seeds> on 2024-07-10 13:42:01.798476+00:00
+[2024-07-10 13:42:02,745] {standard_task_runner.py:52} INFO - Started process 91 to run task
+[2024-07-10 13:42:02,748] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'create_layers_in_snowflake', 'create_seeds', 'manual__2024-07-10T13:42:01.798476+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/create_layers.py', '--cfg-path', '/tmp/tmp88y6qnk4', '--error-file', '/tmp/tmpdneghp3a']
+[2024-07-10 13:42:02,749] {standard_task_runner.py:80} INFO - Job 2: Subtask create_seeds
+[2024-07-10 13:42:02,801] {task_command.py:369} INFO - Running <TaskInstance: create_layers_in_snowflake.create_seeds manual__2024-07-10T13:42:01.798476+00:00 [running]> on host bc9f9d1e47b7
+[2024-07-10 13:42:02,869] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=create_layers_in_snowflake
+AIRFLOW_CTX_TASK_ID=create_seeds
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-10T13:42:01.798476+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-10T13:42:01.798476+00:00
+[2024-07-10 13:42:02,890] {docker.py:247} INFO - Starting docker container from image custom_dbt_image
+[2024-07-10 13:42:04,875] {docker.py:308} INFO - Usage: dbt seed [OPTIONS]
+Try 'dbt seed -h' for help.
+
+Error: Invalid value for '--profiles-dir': Path '/root/.dbt' does not exist.
+[2024-07-10 13:42:05,036] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 387, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 266, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/docker/operators/docker.py", line 313, in _run_image_with_mounts
+    raise AirflowException(f'Docker container failed: {repr(result)} lines {joined_log_lines}')
+airflow.exceptions.AirflowException: Docker container failed: {'StatusCode': 2} lines Usage: dbt seed [OPTIONS]
+Try 'dbt seed -h' for help.
+
+Error: Invalid value for '--profiles-dir': Path '/root/.dbt' does not exist.
+[2024-07-10 13:42:05,041] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=create_layers_in_snowflake, task_id=create_seeds, execution_date=20240710T134201, start_date=20240710T134202, end_date=20240710T134205
+[2024-07-10 13:42:05,057] {standard_task_runner.py:97} ERROR - Failed to execute job 2 for task create_seeds (Docker container failed: {'StatusCode': 2} lines Usage: dbt seed [OPTIONS]
+Try 'dbt seed -h' for help.
+
+Error: Invalid value for '--profiles-dir': Path '/root/.dbt' does not exist.; 91)
+[2024-07-10 13:42:05,070] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-07-10 13:42:05,165] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

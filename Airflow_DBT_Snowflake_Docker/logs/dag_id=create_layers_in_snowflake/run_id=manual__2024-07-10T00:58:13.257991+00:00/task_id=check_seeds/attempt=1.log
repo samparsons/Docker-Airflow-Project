@@ -1,0 +1,59 @@
+[2024-07-10 00:58:13,869] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.check_seeds manual__2024-07-10T00:58:13.257991+00:00 [queued]>
+[2024-07-10 00:58:13,880] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: create_layers_in_snowflake.check_seeds manual__2024-07-10T00:58:13.257991+00:00 [queued]>
+[2024-07-10 00:58:13,881] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 00:58:13,881] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-10 00:58:13,882] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-10 00:58:13,896] {taskinstance.py:1377} INFO - Executing <Task(DockerOperator): check_seeds> on 2024-07-10 00:58:13.257991+00:00
+[2024-07-10 00:58:13,900] {standard_task_runner.py:52} INFO - Started process 1485 to run task
+[2024-07-10 00:58:13,904] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'create_layers_in_snowflake', 'check_seeds', 'manual__2024-07-10T00:58:13.257991+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/create_layers.py', '--cfg-path', '/tmp/tmpc1h24g72', '--error-file', '/tmp/tmpz3eofsio']
+[2024-07-10 00:58:13,904] {standard_task_runner.py:80} INFO - Job 10: Subtask check_seeds
+[2024-07-10 00:58:13,967] {task_command.py:369} INFO - Running <TaskInstance: create_layers_in_snowflake.check_seeds manual__2024-07-10T00:58:13.257991+00:00 [running]> on host 9ba3cd856d5b
+[2024-07-10 00:58:14,041] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=create_layers_in_snowflake
+AIRFLOW_CTX_TASK_ID=check_seeds
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-10T00:58:13.257991+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-10T00:58:13.257991+00:00
+[2024-07-10 00:58:14,064] {docker.py:247} INFO - Starting docker container from image custom_dbt_image
+[2024-07-10 00:58:14,182] {docker.py:308} INFO - # Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'dbtlearn'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'dbtlearn'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+asset-paths : ["assets"]
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  dbtlearn:
+    +materialized: view
+    business_layer:
+      +materialized: table
+[2024-07-10 00:58:14,282] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=create_layers_in_snowflake, task_id=check_seeds, execution_date=20240710T005813, start_date=20240710T005813, end_date=20240710T005814
+[2024-07-10 00:58:14,330] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-07-10 00:58:14,377] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

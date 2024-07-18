@@ -1,0 +1,37 @@
+[2024-07-12 17:00:53,165] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: test_questions.bash1 manual__2024-07-12T17:00:51.546812+00:00 [queued]>
+[2024-07-12 17:00:53,179] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: test_questions.bash1 manual__2024-07-12T17:00:51.546812+00:00 [queued]>
+[2024-07-12 17:00:53,180] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-12 17:00:53,180] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-07-12 17:00:53,181] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-07-12 17:00:53,197] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): bash1> on 2024-07-12 17:00:51.546812+00:00
+[2024-07-12 17:00:53,201] {standard_task_runner.py:52} INFO - Started process 44073 to run task
+[2024-07-12 17:00:53,204] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'test_questions', 'bash1', 'manual__2024-07-12T17:00:51.546812+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/test_questions.py', '--cfg-path', '/tmp/tmpf1u6cgae', '--error-file', '/tmp/tmpm9n6355p']
+[2024-07-12 17:00:53,205] {standard_task_runner.py:80} INFO - Job 12: Subtask bash1
+[2024-07-12 17:00:53,272] {task_command.py:369} INFO - Running <TaskInstance: test_questions.bash1 manual__2024-07-12T17:00:51.546812+00:00 [running]> on host c8efd281e0f4
+[2024-07-12 17:00:53,393] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=test_questions
+AIRFLOW_CTX_TASK_ID=bash1
+AIRFLOW_CTX_EXECUTION_DATE=2024-07-12T17:00:51.546812+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-07-12T17:00:51.546812+00:00
+[2024-07-12 17:00:53,395] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2024-07-12 17:00:53,397] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'dbt build']
+[2024-07-12 17:00:53,410] {subprocess.py:85} INFO - Output:
+[2024-07-12 17:00:56,896] {subprocess.py:92} INFO - Usage: dbt build [OPTIONS]
+[2024-07-12 17:00:56,896] {subprocess.py:92} INFO - Try 'dbt build -h' for help.
+[2024-07-12 17:00:56,897] {subprocess.py:92} INFO - 
+[2024-07-12 17:00:56,897] {subprocess.py:92} INFO - Error: Invalid value for '--profiles-dir': Path '/home/***/.dbt' does not exist.
+[2024-07-12 17:00:57,016] {subprocess.py:96} INFO - Command exited with return code 2
+[2024-07-12 17:00:57,035] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-07-12 17:00:57,041] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=test_questions, task_id=bash1, execution_date=20240712T170051, start_date=20240712T170053, end_date=20240712T170057
+[2024-07-12 17:00:57,055] {standard_task_runner.py:97} ERROR - Failed to execute job 12 for task bash1 (Bash command failed. The command returned a non-zero exit code 2.; 44073)
+[2024-07-12 17:00:57,090] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-07-12 17:00:57,147] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
